@@ -93,16 +93,53 @@ This is the AI engine workspace.
    ```bash
    python -m venv venv
    .\venv\Scripts\Activate.ps1
-   ```
-3. Install backend dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Start the API:
-   ```bash
-   uvicorn main:app --reload
-   ```
-5. Visit `http://127.0.0.1:8000/docs` to explore the API.
+ ### Installation & System Execution Guide
+
+Follow these sequential steps to initialize your isolated local environment, resolve dependencies, and launch the platform:
+1. **Navigate to the Backend Subdirectory**
+The application gateway handles dependency mapping and pipeline orchestration. If you are in the repository root folder, enter the backend directory:
+```bash
+cd accessiscan-backend
+```
+2. ***Instantiate the Isolated Python Virtual Environment**
+Create your isolated environment workspace directly within the backend directory:
+```bash
+python -m venv venv
+```
+3. **Activate the Virtual Environment Context**
+Select and run the activation sequence corresponding to your host operating system architecture:
+
+**Windows (PowerShell):** 
+```bash
+.\venv\Scripts\Activate.ps1`
+
+```
+**Windows (Command Prompt):**
+ ```bash
+ .\venv\Scripts\activate.bat`
+```
+**macOS / Linux (Terminal):** `
+```bash
+source venv/bin/activate`
+```
+
+4. **Bootstrap Package Management Utilities**
+Ensure the system wheel builders and installation tools are updated to guarantee stable package dependency resolution:
+```bash
+pip install --upgrade pip setuptools wheel
+```
+5. **Install the Comprehensive Dependency Tree**
+Install the complete framework suite—including FastAPI, SQLModel, Pytest, OpenCV, and Ultralytics—via the backend requirements catalog:
+```bash
+pip install -r requirements.txt
+
+```
+6. **Launch the Application & Verify via Swagger UI**
+Start the local application gateway using the Uvicorn deployment server:
+```bash
+uvicorn main:app --reload
+``` 
+7. **Visit `http://127.0.0.1:8000/docs` to explore the API.**
 
 ### AI engine
 
