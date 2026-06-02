@@ -1,0 +1,48 @@
+{
+    "folders": [
+        {
+            "name": "accessiscan-ai-core",
+            "path": "accessiscan-ai-1"
+        },
+        {
+            "name": "accessiscan-backend",
+            "path": "accessiscan-backend"
+        }
+    ],
+    "settings": {
+        "python.defaultInterpreterPath": "C:/Projects/accessiscan-ai-platform/accessiscan-backend/venv/Scripts/python.exe",
+        "python.analysis.extraPaths": [
+            "C:/Projects/accessiscan-ai-platform/accessiscan-ai-1",
+            "C:/Projects/accessiscan-ai-platform/accessiscan-backend"
+        ],
+        "python.analysis.importFormat": "absolute"
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "AccessiScan: Run AI Orchestrator (ai_engine.py)",
+                "type": "debugpy",
+                "request": "launch",
+                "python": "C:/Projects/accessiscan-ai-platform/accessiscan-backend/venv/Scripts/python.exe",
+                "program": "C:/Projects/accessiscan-ai-platform/accessiscan-ai-1/ai_engine.py",
+                "cwd": "C:/Projects/accessiscan-ai-platform/accessiscan-ai-1",
+                "console": "integratedTerminal",
+                "justMyCode": true
+            },
+            {
+                "name": "AccessiScan: Run FastAPI Backend (main.py)",
+                "type": "debugpy",
+                "request": "launch",
+                "python": "C:/Projects/accessiscan-ai-platform/accessiscan-backend/venv/Scripts/python.exe",
+                "program": "C:/Projects/accessiscan-ai-platform/accessiscan-backend/main.py",
+                "cwd": "C:/Projects/accessiscan-ai-platform/accessiscan-backend",
+                "console": "integratedTerminal",
+                "justMyCode": true,
+                "env": {
+                    "PYTHONPATH": "C:/Projects/accessiscan-ai-platform/accessiscan-backend"
+                }
+            }
+        ]
+    }
+}

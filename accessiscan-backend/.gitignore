@@ -1,0 +1,21 @@
+# =====================================================================
+# AccessiScan-Backend: Enterprise Exclusion Matrix
+# =====================================================================
+
+# --- 1. Runtime & Environment ---
+# Purpose: Prevent local environment noise and state pollution.
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# --- 2. Persistence & Config ---
+# Purpose: Ensure sensitive local configurations and volatile 
+# database files remain excluded from version control.
+.env
+*.db
+*.sqlite3
+
+# --- 3. System & OS Metadata ---
+# Purpose: Maintain repository cleanliness by ignoring system artifacts.
+.DS_Store

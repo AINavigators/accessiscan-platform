@@ -1,0 +1,34 @@
+# ==============================================================================
+# ACCESSISCAN-AI: DEPENDENCY MANIFEST (CV & ML STACK)
+# ==============================================================================
+
+# --- 1. CORE COMPUTER VISION (YOLOv8 & PYTORCH STACK) ---
+ultralytics==8.4.48            # Object detection framework & YOLOv8 keypoint core
+ultralytics-thop==2.0.19       # Profiles model FLOPs and performance metrics
+torch==2.2.2                   # Deep learning backend (stable pipeline weights)
+torchvision==0.17.2            # Image transforms and datasets (paired with torch)
+opencv-python==4.13.0.92       # Image processing and canvas manipulation
+scipy==1.13.1                  # Keypoint math optimization algorithms
+onnxruntime==1.18.0            # High-performance inference deployment engine
+
+# --- 2. DATA ANALYSIS & METROLOGY ---
+numpy==2.0.2                   # Multidimensional array computing
+polars==1.36.1                 # High-performance dataframe engine
+polars-runtime-32==1.36.1      # Runtime optimizer for Polars
+matplotlib==3.9.4              # Performance training curve visualizations
+contourpy==1.3.0               # Matplotlib array contour calculation
+cycler==0.12.1                 # Charting styling rules
+fonttools==4.60.2              # Vector manipulation for graph rendering
+kiwisolver==1.4.7              # Cassowary layout constraint solver
+networkx==3.2.1                # Structural data graph analysis
+tqdm==4.66.4                   # Inference loop progress tracking
+
+# --- 3. HARDWARE & DEEP LEARNING UTILITIES ---
+pillow==11.3.0                 # Image decoding and color space formatting
+PyYAML==6.0.3                  # Dataset paths and class label parsing
+filelock==3.19.1               # Concurrent model weight downloads
+fsspec==2025.10.0              # File system streaming specification
+mpmath==1.3.0                  # Arbitrary precision floating-point support
+sympy==1.14.0                  # Geometric equation symbolic mathematics
+psutil==7.2.2                  # Hardware utilization monitoring
+

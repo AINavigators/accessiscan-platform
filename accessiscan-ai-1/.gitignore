@@ -1,0 +1,43 @@
+# =====================================================================
+# AccessiScan-AI: Standard Git Ignore File
+# =====================================================================
+
+# --- 1. Python Environments ---
+# Purpose: Prevent local dependency bloat.
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# --- 2. ML Artifacts & Weights ---
+# Purpose: Prevent uploading massive binary model weights (>100MB)
+# and tracking transient local execution logs.
+*.pt
+*.onnx
+*.engine
+wandb/
+runs/
+models/train/
+
+# --- 3. Dataset Skeleton Constraints ---
+# Purpose: Ignore actual dataset files while maintaining folder 
+# structure via .gitkeep to ensure CI/CD path compatibility.
+data/images/train/*
+!data/images/train/.gitkeep
+data/images/val/*
+!data/images/val/.gitkeep
+data/images/test/*
+!data/images/test/.gitkeep
+data/labels/train/*
+!data/labels/train/.gitkeep
+data/labels/val/*
+!data/labels/val/.gitkeep
+data/labels/test/*
+!data/labels/test/.gitkeep
+
+# --- 4. System & IDE ---
+# Purpose: Maintain a clean repository workspace.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------
+# AI INFERENCE SCHEMA DEFINITION (YOLO-Pose Configuration)
+# ---------------------------------------------------------------------
+# Purpose:
+#    Configures the training and inference pipeline for the AccessiScan
+#    pose estimation model. Defines object taxonomy and keypoint structural 
+#    metadata for high-precision infrastructure compliance tracking.
+
+# --- 1. DATASET DIRECTORY ANCHORS ---
+# Purpose: Defines filesystem pathing for model training and validation sets.
+train: ../data/images/train
+val: ../data/images/val
+test: ../data/images/test
+
+# --- 2. WORKSPACE & PIPELINE PROVENANCE ---
+# Purpose: Tracks dataset versioning and source lineage via Roboflow.
+roboflow:
+  license: CC BY 4.0
+  project: accessiscan-ai-project1
+  url: https://universe.roboflow.com/fatimabus-workspace/accessiscan-ai-project1/dataset/1
+  version: 1
+  workspace: fatimabus-workspace
+
+# --- 3. KEYPOINT STRUCTURAL MATRIX ---
+# Purpose: Defines the spatial geometry for the pose estimation architecture.
+# kpt_shape: (Number of keypoints, Dimensions per keypoint)
+kpt_shape: [3, 3] 
+# flip_idx: Symmetry indices used for horizontal data augmentation.
+flip_idx: [0, 1, 2] 
+
+# --- 4. NEURAL NETWORK CLASSIFICATION TAXONOMY (nc: 7) ---
+# Purpose: Maps structural infrastructure types to internal classification indices.
+names:
+  - accesibility_signage
+  - handrail
+  - kerb_ramp
+  - platform_edge
+  - ramp
+  - stairs
+  - tactile_indicators
+
+
+  
+  
+  
+
+  
+ 

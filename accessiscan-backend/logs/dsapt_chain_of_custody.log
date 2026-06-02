@@ -1,0 +1,104 @@
+[2026-05-28 03:38:43] INFO - INBOUND_REQUEST | Target Station Node: 'platform' | Source Asset Filename: 'test_station.jpg' | Status: OFFLOADING_TO_ASYNC_QUEUE
+[2026-05-28 03:38:46] INFO - INBOUND_REQUEST | Target Station Node: 'platform' | Source Asset Filename: 'test_station.jpg' | Status: OFFLOADING_TO_ASYNC_QUEUE
+[2026-05-28 03:54:17] INFO - INBOUND_REQUEST | Target Station Node: 'test station' | Source Asset Filename: 'test_station.jpg' | Status: OFFLOADING_TO_ASYNC_QUEUE
+[2026-05-28 03:55:03] INFO - INBOUND_REQUEST | Target Station Node: 'test station' | Source Asset Filename: 'test_station.jpg' | Status: OFFLOADING_TO_ASYNC_QUEUE
+[2026-05-28 03:59:59] INFO - INBOUND_REQUEST | Target Station Node: 'test station' | Source Asset Filename: 'test_station.jpg' | Status: OFFLOADING_TO_ASYNC_QUEUE
+[2026-05-28 04:06:33] INFO - INBOUND_REQUEST | Target Station Node: 'test station' | Source Asset Filename: 'test_station.jpg' | Status: OFFLOADING_TO_ASYNC_QUEUE
+[2026-05-28 04:06:56] INFO - INBOUND_REQUEST | Target Station Node: 'str' | Source Asset Filename: 'test_station.jpg' | Status: OFFLOADING_TO_ASYNC_QUEUE
+[2026-05-28 04:16:40] INFO - INBOUND_REQUEST | Target Station Node: 'string' | Source Asset Filename: 'test_station.jpg' | Status: OFFLOADING_TO_ASYNC_QUEUE
+[2026-05-28 04:16:40] INFO - ASYNC_THREAD_START | Inspection ID: 8
+[2026-05-28 04:16:40] INFO - AI_COMPUTATION_ENGAGED | Passing path '<class 'str'>' to AccesiScanEngine...
+[2026-05-28 04:16:40] ERROR - PROCESSING_FAILURE | ID: 8 | Reason: stat: path should be string, bytes, os.PathLike or integer, not type
+[2026-05-28 04:28:01] INFO - ASYNC_THREAD_START | Inspection ID: 9
+[2026-05-28 04:28:01] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260528042801_test_station.jpg' to AccesiScanEngine...
+[2026-05-28 04:28:01] INFO - PROCESSING_SUCCESS | Inspection ID: 9
+[2026-05-28 23:10:16] INFO - ASYNC_THREAD_START | Inspection ID: 1
+[2026-05-28 23:10:16] ERROR - PROCESSING_FAILURE | ID: 1 | Reason: Asynchronous tracking sync lost. Record ID 1 was dropped.
+[2026-05-28 23:13:32] INFO - ASYNC_THREAD_START | Inspection ID: 1
+[2026-05-28 23:13:32] ERROR - PROCESSING_FAILURE | ID: 1 | Reason: Asynchronous tracking sync lost. Record ID 1 was dropped.
+[2026-05-28 23:24:16] INFO - ASYNC_THREAD_START | Inspection ID: 1
+[2026-05-28 23:24:16] ERROR - PROCESSING_FAILURE | ID: 1 | Reason: Asynchronous tracking sync lost. Record ID 1 was dropped.
+[2026-05-30 13:15:28] INFO - ASYNC_THREAD_START | Inspection ID: 1
+[2026-05-30 13:15:28] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530131528_f4ec4254-19bfac2e7513593017070ddee7fe80e2.jpg' to AccesiScanEngine...
+[2026-05-30 13:15:28] INFO - PROCESSING_SUCCESS | Inspection ID: 1
+[2026-05-30 13:21:12] INFO - ASYNC_THREAD_START | Inspection ID: 2
+[2026-05-30 13:21:12] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530132112_7387accd-IMG-20260415-WA0039.jpg' to AccesiScanEngine...
+[2026-05-30 13:21:13] INFO - PROCESSING_SUCCESS | Inspection ID: 2
+[2026-05-30 13:49:27] INFO - ASYNC_THREAD_START | Inspection ID: 3
+[2026-05-30 13:49:27] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530134927_8feb4696-WhatsApp_Image_2026-04-23_at_1.13.09_PM.jpeg' to AccesiScanEngine...
+[2026-05-30 13:49:28] INFO - PROCESSING_SUCCESS | Inspection ID: 3
+[2026-05-30 13:53:20] INFO - ASYNC_THREAD_START | Inspection ID: 4
+[2026-05-30 13:53:20] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530135320_3821a901-WhatsApp_Image_2026-04-23_at_1.08.49_PM_3.jpeg' to AccesiScanEngine...
+[2026-05-30 13:53:20] INFO - PROCESSING_SUCCESS | Inspection ID: 4
+[2026-05-30 13:59:55] INFO - ASYNC_THREAD_START | Inspection ID: 5
+[2026-05-30 13:59:55] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530135955_3821a901-WhatsApp_Image_2026-04-23_at_1.08.49_PM_3.jpeg' to AccesiScanEngine...
+[2026-05-30 13:59:55] INFO - PROCESSING_SUCCESS | Inspection ID: 5
+[2026-05-30 14:03:25] INFO - ASYNC_THREAD_START | Inspection ID: 6
+[2026-05-30 14:03:25] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530140325_c9e08c95-F129_2372.jpg' to AccesiScanEngine...
+[2026-05-30 14:03:25] INFO - PROCESSING_SUCCESS | Inspection ID: 6
+[2026-05-30 14:11:43] INFO - ASYNC_THREAD_START | Inspection ID: 7
+[2026-05-30 14:11:43] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530141143_f4ec4254-19bfac2e7513593017070ddee7fe80e2.jpg' to AccesiScanEngine...
+[2026-05-30 14:11:43] INFO - PROCESSING_SUCCESS | Inspection ID: 7
+[2026-05-30 14:12:57] INFO - ASYNC_THREAD_START | Inspection ID: 8
+[2026-05-30 14:12:57] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530141257_8feb4696-WhatsApp_Image_2026-04-23_at_1.13.09_PM.jpeg' to AccesiScanEngine...
+[2026-05-30 14:12:57] INFO - PROCESSING_SUCCESS | Inspection ID: 8
+[2026-05-30 14:13:27] INFO - ASYNC_THREAD_START | Inspection ID: 9
+[2026-05-30 14:13:27] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530141327_8feb4696-WhatsApp_Image_2026-04-23_at_1.13.09_PM.jpeg' to AccesiScanEngine...
+[2026-05-30 14:13:27] INFO - PROCESSING_SUCCESS | Inspection ID: 9
+[2026-05-30 23:31:11] INFO - ASYNC_THREAD_START | Inspection ID: 10
+[2026-05-30 23:31:11] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530233111_c9e08c95-F129_2372.jpg' to AccesiScanEngine...
+[2026-05-30 23:31:11] INFO - PROCESSING_SUCCESS | Inspection ID: 10
+[2026-05-30 23:35:20] INFO - ASYNC_THREAD_START | Inspection ID: 11
+[2026-05-30 23:35:20] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260530233520_c9e08c95-F129_2372.jpg' to AccesiScanEngine...
+[2026-05-30 23:35:20] INFO - PROCESSING_SUCCESS | Inspection ID: 11
+[2026-05-31 00:02:17] INFO - ASYNC_THREAD_START | Inspection ID: 12
+[2026-05-31 00:02:17] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531000217_d7659484-Queensland_Rail_SMU260_allocated_space_and_folding_seats_Brisbane_DSCF5452.jpg' to AccesiScanEngine...
+[2026-05-31 00:02:17] INFO - PROCESSING_SUCCESS | Inspection ID: 12
+[2026-05-31 00:20:07] INFO - ASYNC_THREAD_START | Inspection ID: 13
+[2026-05-31 00:20:07] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531002007_d7659484-Queensland_Rail_SMU260_allocated_space_and_folding_seats_Brisbane_DSCF5452.jpg' to AccesiScanEngine...
+[2026-05-31 00:20:08] INFO - PROCESSING_SUCCESS | Inspection ID: 13
+[2026-05-31 00:43:16] INFO - ASYNC_THREAD_START | Inspection ID: 14
+[2026-05-31 00:43:16] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531004316_d7659484-Queensland_Rail_SMU260_allocated_space_and_folding_seats_Brisbane_DSCF5452.jpg' to AccesiScanEngine...
+[2026-05-31 00:43:16] INFO - PROCESSING_SUCCESS | Inspection ID: 14
+[2026-05-31 00:44:37] INFO - ASYNC_THREAD_START | Inspection ID: 15
+[2026-05-31 00:44:37] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531004437_d7659484-Queensland_Rail_SMU260_allocated_space_and_folding_seats_Brisbane_DSCF5452.jpg' to AccesiScanEngine...
+[2026-05-31 00:44:38] INFO - PROCESSING_SUCCESS | Inspection ID: 15
+[2026-05-31 00:46:09] INFO - ASYNC_THREAD_START | Inspection ID: 16
+[2026-05-31 00:46:09] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531004609_d7659484-Queensland_Rail_SMU260_allocated_space_and_folding_seats_Brisbane_DSCF5452.jpg' to AccesiScanEngine...
+[2026-05-31 00:46:09] INFO - PROCESSING_SUCCESS | Inspection ID: 16
+[2026-05-31 00:48:44] INFO - ASYNC_THREAD_START | Inspection ID: 17
+[2026-05-31 00:48:44] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531004844_d7659484-Queensland_Rail_SMU260_allocated_space_and_folding_seats_Brisbane_DSCF5452.jpg' to AccesiScanEngine...
+[2026-05-31 00:48:44] ERROR - PROCESSING_FAILURE | ID: 17 | Reason: AI Engine Safe Boundary Triggered: An unhandled operational error occurred during processing execution: cannot unpack non-iterable NoneType object
+[2026-05-31 00:51:45] INFO - ASYNC_THREAD_START | Inspection ID: 18
+[2026-05-31 00:51:45] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531005145_d7659484-Queensland_Rail_SMU260_allocated_space_and_folding_seats_Brisbane_DSCF5452.jpg' to AccesiScanEngine...
+[2026-05-31 00:51:45] ERROR - PROCESSING_FAILURE | ID: 18 | Reason: AI Engine Safe Boundary Triggered: An unhandled operational error occurred during processing execution: cannot unpack non-iterable NoneType object
+[2026-05-31 00:52:36] INFO - ASYNC_THREAD_START | Inspection ID: 19
+[2026-05-31 00:52:36] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531005236_d7659484-Queensland_Rail_SMU260_allocated_space_and_folding_seats_Brisbane_DSCF5452.jpg' to AccesiScanEngine...
+[2026-05-31 00:52:37] INFO - PROCESSING_SUCCESS | Inspection ID: 19
+[2026-05-31 00:59:02] INFO - ASYNC_THREAD_START | Inspection ID: 20
+[2026-05-31 00:59:02] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531005902_3821a901-WhatsApp_Image_2026-04-23_at_1.08.49_PM_3.jpeg' to AccesiScanEngine...
+[2026-05-31 00:59:02] INFO - PROCESSING_SUCCESS | Inspection ID: 20
+[2026-05-31 01:45:36] INFO - ASYNC_THREAD_START | Inspection ID: 21
+[2026-05-31 01:45:36] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531014536_3821a901-WhatsApp_Image_2026-04-23_at_1.08.49_PM_3.jpeg' to AccesiScanEngine...
+[2026-05-31 01:45:37] INFO - PROCESSING_SUCCESS | Inspection ID: 21
+[2026-05-31 01:46:10] INFO - ASYNC_THREAD_START | Inspection ID: 22
+[2026-05-31 01:46:10] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531014610_3821a901-WhatsApp_Image_2026-04-23_at_1.08.49_PM_3.jpeg' to AccesiScanEngine...
+[2026-05-31 01:46:10] INFO - PROCESSING_SUCCESS | Inspection ID: 22
+[2026-05-31 01:58:48] INFO - ASYNC_THREAD_START | Inspection ID: 23
+[2026-05-31 01:58:48] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531015848_0209f5a0-shutterstock_1479469736.jpg' to AccesiScanEngine...
+[2026-05-31 01:58:48] INFO - PROCESSING_SUCCESS | Inspection ID: 23
+[2026-05-31 01:59:21] INFO - ASYNC_THREAD_START | Inspection ID: 24
+[2026-05-31 01:59:21] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531015921_0209f5a0-shutterstock_1479469736.jpg' to AccesiScanEngine...
+[2026-05-31 01:59:21] INFO - PROCESSING_SUCCESS | Inspection ID: 24
+[2026-05-31 01:59:56] INFO - ASYNC_THREAD_START | Inspection ID: 25
+[2026-05-31 01:59:56] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531015956_0209f5a0-shutterstock_1479469736.jpg' to AccesiScanEngine...
+[2026-05-31 01:59:57] INFO - PROCESSING_SUCCESS | Inspection ID: 25
+[2026-05-31 02:00:26] INFO - ASYNC_THREAD_START | Inspection ID: 26
+[2026-05-31 02:00:26] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531020026_77fa5e94-allocated-spaces-1.jpg' to AccesiScanEngine...
+[2026-05-31 02:00:27] INFO - PROCESSING_SUCCESS | Inspection ID: 26
+[2026-05-31 02:01:07] INFO - ASYNC_THREAD_START | Inspection ID: 27
+[2026-05-31 02:01:07] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531020107_7387accd-IMG-20260415-WA0039.jpg' to AccesiScanEngine...
+[2026-05-31 02:01:08] INFO - PROCESSING_SUCCESS | Inspection ID: 27
+[2026-05-31 20:20:30] INFO - ASYNC_THREAD_START | Inspection ID: 28
+[2026-05-31 20:20:30] INFO - AI_COMPUTATION_ENGAGED | Passing path 'C:\Projects\accessiscan-ai-platform\accessiscan-backend\uploaded_assets\20260531202030_3821a901-WhatsApp_Image_2026-04-23_at_1.08.49_PM_3.jpeg' to AccesiScanEngine...
+[2026-05-31 20:20:31] INFO - PROCESSING_SUCCESS | Inspection ID: 28
