@@ -1,166 +1,414 @@
-# AccessiScan-AI Platform
+# AccessiScan AI Platform
 
-This repository contains two primary workspaces:
+## Overview
 
-- `accessiscan-backend/` — the FastAPI backend service and API gateway
-- `accessiscan-ai-1/` — the computer vision inference engine and metrology pipeline
+AccessiScan AI is an accessibility auditing platform developed to support infrastructure inspectors, compliance officers, and researchers in assessing accessibility compliance against the Disability Standards for Accessible Public Transport (DSAPT).
 
-The platform is designed to process uploaded inspection images, run YOLO-based detections, and store audit results for DSAPT compliance analysis.
+The platform combines a FastAPI backend, SQLite database, and a custom-trained YOLOv8-Pose computer vision model to automate the detection and evaluation of accessibility infrastructure components such as ramps, stairs, tactile indicators, handrails, platform gaps, and accessibility signage.
 
----
-
-## Repository structure
-
-### `accessiscan-backend/`
-
-This is the backend API workspace.
-
-- `main.py`
-  - Entry point for the backend application.
-  - Creates the FastAPI app, registers routes under `/api/v1`, and starts Uvicorn.
-
-- `app/api/v1/api.py`
-  - Aggregates FastAPI routers and defines API namespaces.
-
-- `app/api/v1/endpoints/inspections.py`
-  - Upload endpoint for inspection images.
-  - Validates file extensions and stores uploaded images in `data/images/uploads/`.
-  - Launches a background task that loads the YOLO model from `accessiscan-ai-1/models/train/weights/best.pt` and saves inference outputs to `data/images/detections/`.
-
-- `app/db/session.py`
-  - Database engine and session factory using SQLModel.
-  - Creates tables for `User`, `Inspection`, `Detection`, `Report`, and `Image` models.
-
-- `app/models/`
-  - SQLModel entity definitions for audit records and metadata.
-
-- `app/core/config.py`
-  - Environment and database configuration settings.
-
-- `app/utils/` and subfolders
-  - Utility components such as PDF generation and service logic.
-
-- `runs/detect/audit_results/`
-  - Intended archive location for detection outputs, but the current implementation saves image outputs under `data/images/detections/`.
-
-- `tests/`
-  - Backend test suite for inspections, inference routing, and detections.
-
-- `requirements.txt`
-  - Backend dependencies for FastAPI, SQLModel, Uvicorn, and test tooling.
+The system processes uploaded inspection images, performs AI-powered accessibility analysis, generates compliance findings, and stores inspection records for future review and auditing.
 
 ---
 
-### `accessiscan-ai-1/`
+# Repository Structure
 
-This is the AI engine workspace.
-
-- `ai_engine.py`
-  - Main controller for AI pipeline execution.
-  - Validates model files and image paths.
-  - Uses `scripts.detect.AccesiScanDetector` and `scripts.storage_manager.AuditStorage`.
-
-- `scripts/detect.py`
-  - Performs object detection and annotation.
-  - Contains the vision inference and metrology logic.
-
-- `scripts/storage_manager.py`
-  - Saves audit metadata and image evidence.
-
-- `scripts/system_utils.py`
-  - Applies environment setup and runtime compatibility patches.
-
-- `models/train/weights/best.pt`
-  - Primary YOLO model weights used by both the backend and AI engine.
-
-- `models/train/weights/best.onnx`
-  - Optional ONNX model artifact for accelerated inference.
-
-- `data/`
-  - Contains the YOLO-formatted dataset used for training and validation.
-
-- `requirements.txt`
-  - AI workspace dependencies for computer vision, OpenCV, and YOLO.
-
----
-
-## How to run
-
-### Backend service
-
-1. Open a terminal in `accessiscan-backend/`.
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   .\venv\Scripts\Activate.ps1
- ### Installation & System Execution Guide
-
-Follow these sequential steps to initialize your isolated local environment, resolve dependencies, and launch the platform:
-1. **Navigate to the Backend Subdirectory**
-The application gateway handles dependency mapping and pipeline orchestration. If you are in the repository root folder, enter the backend directory:
-```bash
-cd accessiscan-backend
+```text
+AccessiScan_AI_Platform/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+├── pytest.ini
+│
+├── accessiscan_backend/
+│   ├── app/
+│   └── tests/
+│
+└── accessiscan_engine/
+    ├── data/
+    ├── models/
+    ├── ai_engine.py
+    ├── train.py
+    └── scripts/
 ```
-2. ***Instantiate the Isolated Python Virtual Environment**
-Create your isolated environment workspace directly within the backend directory:
+
+---
+
+# Project Components
+
+## main.py
+
+The primary application entry point.
+
+Responsibilities:
+
+* Initializes the FastAPI application.
+* Registers API routes.
+* Configures startup events.
+* Connects the backend and AI inference engine.
+* Launches the AccessiScan platform.
+
+---
+
+## accessiscan_backend
+
+The backend service responsible for API management, database operations, inspection workflows, and audit persistence.
+
+### app/api/v1/
+
+Contains versioned API endpoints.
+
+#### inspections.py
+
+Responsible for:
+
+* Inspection image uploads
+* File validation
+* Inspection registration
+* Background inference execution
+* Retrieval of inspection and detection results
+
+Primary endpoint:
+
+```text
+POST /api/v1/inspections/process-asset
+```
+
+---
+
+### app/db/
+
+#### session.py
+
+Database session and engine management using SQLModel.
+
+Responsibilities:
+
+* Creates SQLite connections.
+* Generates database tables during startup.
+* Provides database session dependencies.
+
+---
+
+### app/models/
+
+Contains SQLModel entity definitions:
+
+* User
+* Inspection
+* Detection
+* Report
+* Image
+
+These entities form the relational persistence layer of the platform.
+
+---
+
+### app/core/
+
+#### config.py
+
+Centralized application configuration.
+
+Responsibilities:
+
+* Database configuration
+* Model path configuration
+* Environment settings
+* Global application parameters
+
+---
+
+### app/utils/
+
+Contains supporting services and utility components including:
+
+* Inference integration services
+* Report generation utilities
+* Supporting business logic
+
+---
+
+### tests/
+
+Automated testing suite.
+
+Includes:
+
+* API endpoint tests
+* Database tests
+* Inspection workflow tests
+* Integration tests
+
+---
+
+## accessiscan_engine
+
+Computer vision and accessibility auditing engine.
+
+### ai_engine.py
+
+Primary AI controller.
+
+Responsibilities:
+
+* Loads the trained YOLOv8-Pose model.
+* Validates image inputs.
+* Executes accessibility audits.
+* Generates accessibility findings.
+* Produces compliance outputs.
+
+---
+
+### scripts/detect.py
+
+Core object detection and image annotation module.
+
+Responsibilities:
+
+* Object detection
+* Landmark extraction
+* Accessibility feature identification
+* Image annotation
+
+---
+
+### scripts/storage_manager.py
+
+Responsible for:
+
+* Audit artifact generation
+* JSON ledger creation
+* Evidence image persistence
+
+---
+
+### scripts/system_utils.py
+
+Provides runtime compatibility and environment configuration utilities.
+
+---
+
+# Models
+
+Located within:
+
+```text
+accessiscan_engine/models/train/weights/
+```
+
+### best.pt
+
+Primary YOLOv8-Pose model used for accessibility auditing.
+
+### best.onnx
+
+Optional ONNX model export used for deployment optimization and accelerated inference.
+
+---
+
+# Dataset
+
+Located within:
+
+```text
+accessiscan_engine/data/
+```
+
+Contains the annotated training, validation, and testing datasets used during model development and evaluation.
+
+---
+
+# Installation
+
+## 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd AccessiScan_AI_Platform
+```
+
+---
+
+## 2. Create a Virtual Environment
+
+### Windows (PowerShell)
+
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+### Windows (Command Prompt)
+
+```cmd
+python -m venv venv
+venv\Scripts\activate.bat
+```
+
+### macOS / Linux
+
 ```bash
 python -m venv venv
-```
-3. **Activate the Virtual Environment Context**
-Select and run the activation sequence corresponding to your host operating system architecture:
-
-**Windows (PowerShell):** 
-```bash
-.\venv\Scripts\Activate.ps1`
-
-```
-**Windows (Command Prompt):**
- ```bash
- .\venv\Scripts\activate.bat`
-```
-**macOS / Linux (Terminal):** `
-```bash
-source venv/bin/activate`
+source venv/bin/activate
 ```
 
-4. **Bootstrap Package Management Utilities**
-Ensure the system wheel builders and installation tools are updated to guarantee stable package dependency resolution:
+---
+
+## 3. Install Dependencies
+
+Install all required packages from the project root:
+
 ```bash
 pip install --upgrade pip setuptools wheel
-```
-5. **Install the Comprehensive Dependency Tree**
-Install the complete framework suite—including FastAPI, SQLModel, Pytest, OpenCV, and Ultralytics—via the backend requirements catalog:
-```bash
 pip install -r requirements.txt
-
 ```
-6. **Launch the Application & Verify via Swagger UI**
-Start the local application gateway using the Uvicorn deployment server:
+
+---
+
+# Running the Platform
+
+From the project root directory:
+
 ```bash
 uvicorn main:app --reload
-``` 
-7. **Visit `http://127.0.0.1:8000/docs` to explore the API.**
+```
 
-### AI engine
+Alternatively:
 
-1. Open a terminal in `accessiscan-ai-1/`.
-2. Create and activate a separate virtual environment if needed.
-3. Install AI dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Run the AI controller directly:
-   ```bash
-   python ai_engine.py
-   ```
+```bash
+python main.py
+```
+
+A successful startup should display messages similar to:
+
+```text
+Uvicorn running on http://127.0.0.1:8000
+Application startup complete
+```
+
+---
+
+# Swagger API Interface
+
+Open a web browser and navigate to:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+The Swagger interface provides:
+
+* Endpoint testing
+* Request validation
+* Response inspection
+* API documentation
 
 ---
 
-## Notes on current implementation
+# Running an Accessibility Audit
 
-- The backend entrypoint is `accessiscan-backend/main.py`.
-- The backend inspection route currently loads the YOLO model directly and saves detection results in `data/images/detections/`.
-- The `accessiscan-ai-1/` workspace contains the pipeline used for standalone AI audits.
-- This repo uses two separate local workspaces rather than a single combined Python package.
+1. Open the Swagger interface.
+2. Expand:
+
+```text
+POST /api/v1/inspections/process-asset
+```
+
+3. Select **Try it out**.
+4. Upload an inspection image.
+5. Execute the request.
+
+The platform will:
+
+* Validate the uploaded image.
+* Execute YOLOv8-Pose inference.
+* Detect accessibility features.
+* Evaluate compliance criteria.
+* Store inspection data in SQLite.
+* Generate audit findings and evidence imagery.
 
 ---
+
+# Database
+
+AccessiScan utilizes:
+
+```text
+SQLite + SQLModel
+```
+
+Database tables are automatically generated during application startup.
+
+Core entities include:
+
+* User
+* Inspection
+* Detection
+* Report
+* Image
+
+The database file is stored locally as:
+
+```text
+accessiscan_backend/app.db
+```
+
+---
+
+# Testing
+
+Execute the automated test suite:
+
+```bash
+pytest
+```
+
+The testing framework validates:
+
+* API endpoints
+* Database functionality
+* Inspection workflows
+* Persistence operations
+* Integration behaviour
+
+---
+
+# Technologies Used
+
+* Python
+* FastAPI
+* SQLModel
+* SQLite
+* Uvicorn
+* Ultralytics YOLOv8-Pose
+* OpenCV
+* NumPy
+* Pydantic
+* Pytest
+
+---
+
+# Current Project Status
+
+AccessiScan AI is currently implemented as a Technology Readiness Level 3 (TRL 3) Proof of Concept.
+
+Current capabilities include:
+
+* Accessibility image auditing
+* AI-powered feature detection
+* Compliance assessment
+* Audit evidence generation
+* JSON audit ledger generation
+* SQLite-based persistence
+
+Future development will focus on:
+
+* Dashboard-based user interfaces
+* Mobile field-auditing support
+* Automated PDF report generation
+* Enhanced model accuracy through dataset expansion
+* Real-time video auditing capabilities
+* Expanded accessibility feature coverage
+* Advanced compliance analytics and reporting
+* Cloud deployment and scalability enhancements
